@@ -1,7 +1,9 @@
+# for creating new dataset of users
 import cv2
 import os
 import time
 
+# checks for a directory and creates if not exists
 def assure_path_exists(path):
     dir = os.path.dirname(path)
     if not os.path.exists(dir):
@@ -32,12 +34,3 @@ def create_update_dataset(face_id):
 # Enter ID of User
 face_id = int(input("Enter User ID : "))
 create_update_dataset(face_id)
-         
-          
-            
-
-            
-    
-    
-
-
