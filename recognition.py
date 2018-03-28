@@ -21,6 +21,8 @@ gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 faces = faceCascade.detectMultiScale(gray, 1.3, 5)
 for(x,y,w,h) in faces:
     id_, confidence = recognizer.predict(gray[y:y+h,x:x+w])
+    
+    # checking for different users with image ids
     if id_ >= 11 and id_ <= 15:  
         print("User 1")
     elif id_ >= 21 and id_ <= 25:
@@ -36,5 +38,6 @@ for(x,y,w,h) in faces:
     else:
         print("Unknown")
 
+# if no faces are detected in unknown image
 if len(faces) == 0:
     print("No faces found")
