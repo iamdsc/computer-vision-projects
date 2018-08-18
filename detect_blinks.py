@@ -4,7 +4,6 @@ from imutils.video import VideoStream
 from imutils import face_utils
 import numpy as np
 import imutils
-import time
 import dlib
 import cv2
 
@@ -29,7 +28,7 @@ def eye_aspect_ratio(eye):
 # and then a second for the no. of consecutive
 # frames the eye must be below the threshold
 EYE_AR_THRESH = 0.25
-EYE_AR_CONSEC_FRAMES = 3
+EYE_AR_CONSEC_FRAMES = 2
 
 # initialize the frame counters and total number of blinks
 COUNTER = 0
@@ -52,7 +51,7 @@ vs = VideoStream(src=0).start()
 # loop over frames from the video stream
 while True:
     frame = vs.read()
-    frame = imutils.resize(frame, width=450)
+    #frame = imutils.resize(frame, width=450)
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     # detect faces in the grayscale frame
