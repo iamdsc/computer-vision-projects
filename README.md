@@ -1,4 +1,4 @@
-# face-recognition-system
+# Computer Vision Projects using Python
 
 ### Python version used :
 ```
